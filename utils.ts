@@ -191,6 +191,8 @@ export function shell(
   };
 }
 
+// looking up CFBundleURLTypes: defaults read /Applications/DeineApp.app/Contents/Info CFBundleURLTypes
+
 /**
  * Shortcut for managing window sizing with Rectangle
  */
@@ -198,7 +200,7 @@ export function rectangle(name: string): LayerCommand {
   return {
     to: [
       {
-        shell_command: `open -g rectangle://execute-action?name=${name}`,
+        shell_command: `open -g rectangle-pro://execute-action?name=${name}`,
       },
     ],
     description: `Window: ${name}`,
