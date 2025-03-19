@@ -3,6 +3,40 @@ import { KarabinerRules } from "./types";
 import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
 
 const rules: KarabinerRules[] = [
+  // change ^ and < keys to match DE Layout
+  {
+    description: "Change ^ and < (DE Layout)",
+    manipulators: [
+      {
+        type: "basic",
+        from: {
+          key_code: "non_us_backslash",
+          modifiers: {
+            optional: ["any"],
+          },
+        },
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        from: {
+          key_code: "grave_accent_and_tilde",
+          modifiers: {
+            optional: ["any"],
+          },
+        },
+        to: [
+          {
+            key_code: "non_us_backslash",
+          },
+        ],
+      },
+    ],
+  },
   // Define the Hyper key itself
   {
     description: "Hyper Key (⌃⌥⇧⌘)",
@@ -74,7 +108,7 @@ const rules: KarabinerRules[] = [
       d: app("Discord"),
       s: app("Spotify"),
       n: app("Notion"),
-      t: app("iTerm2"),
+      t: app("iTerm"),
       f: app("Finder"),
       w: app("WhatsApp"),
       v: app("Windsurf"),
@@ -228,18 +262,7 @@ const rules: KarabinerRules[] = [
       l: {
         to: [{ key_code: "right_arrow" }],
       },
-      // Magicmove via homerow.app
-      m: {
-        to: [{ key_code: "f", modifiers: ["right_control"] }],
-        // TODO: Trigger Vim Easymotion when VSCode is focused
-      },
-      // Scroll mode via homerow.app
-      s: {
-        to: [{ key_code: "j", modifiers: ["right_control"] }],
-      },
-      d: {
-        to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
-      },
+      
       u: {
         to: [{ key_code: "page_down" }],
       },
