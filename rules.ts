@@ -95,9 +95,12 @@ const rules: KarabinerRules[] = [
     // ),
     // b = "B"rowse
     b: {
-      t: open("https://twitter.com"),
+      t: open("https://twitch.com"),
       y: open("https://news.ycombinator.com"),
       f: open("https://facebook.com"),
+      m: open("https://medium.com"),
+      d: open("https://dev.to"),
+      g: open("https://ground.news"),
       r: open("https://reddit.com"),
       i: open("https://instagram.com"),
     },
@@ -108,7 +111,7 @@ const rules: KarabinerRules[] = [
       d: app("Discord"),
       s: app("Spotify"),
       n: app("Notion"),
-      t: app("iTerm"),
+      t: app("Ghostty"),
       f: app("Finder"),
       w: app("WhatsApp"),
       v: app("Windsurf"),
